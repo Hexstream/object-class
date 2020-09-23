@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="canonical" href="https://www.hexstreamsoft.com/libraries/object-class/" />
+    <meta name="author" content="Jean-Philippe Paradis" />
+    <link rel="author" href="https://abc.hexstream.xyz/" />
+    <link rel="license" href="https://www.hexstreamsoft.com/UNLICENSE" />
+    <meta name="description" content="Ensures that special subclasses of standard-object cluster right in front of standard-object in the class precedence list." />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>object-class | Libraries | HexstreamSoft</title>
+    <link href="https://www.hexstreamsoft.com/css/global.css" rel="stylesheet" type="text/css" />
+    <link href="https://www.hexstreamsoft.com/libraries/libraries.css" rel="stylesheet" type="text/css" />
+    <link href="https://global.hexstreamsoft.com/css/cl-definitions.css" rel="stylesheet" type="text/css" />
+    <script src="https://global.hexstreamsoft.com/scripts/global.js"></script>
+    <script src="https://www.hexstreamsoft.com/scripts/global.js"></script>
+    <script src="https://www.hexstreamsoft.com/libraries/libraries.js" defer></script>
+  </head>
+
+  <body>
+
+    <nav id="top-nav">
+
+      <div class="main">
+
+        <div class="breadcrumbs">
+          <a href="https://www.hexstreamsoft.com/">HexstreamSoft</a>
+          <span class="crumb"><span class="s"> » </span><a href="https://www.hexstreamsoft.com/libraries/">Libraries</a></span>
+          <span class="crumb"><span class="s"> » </span><a class="here">object-class</a></span>
+        </div>
+
+        <nav class="tabs" id="meta-nav">
+          <ul>
+            <li><a class="github" href="https://github.com/Hexstream/object-class"><span>See on GitHub</span></a></li>
+          </ul>
+        </nav>
+
+      </div>
+
+      <p id="last-updated"><span>This page was last updated on </span><time datetime="2020-09-22">22 september 2020</time><span>.</span></p>
+
+    </nav>
+
+    <main>
+
+      <header id="page-header">
+        <h1>object-class</h1>
+      </header>
+
+      <div class="tags contains-groups">
+        <div class="group prominent">
+          <span class="tag hv license">
+            <span class="h">License<span>:</span></span>
+            <span class="v">Public Domain</span>
+          </span>
+          <span class="s">, </span>
+          <span class="tag hv quicklisp">
+            <span class="h">Load it with Quicklisp<span>:</span></span>
+            <code class="v">(ql:quickload "object-class")</code>
+          </span>
+        </div>
+        <div class="group">
+          <span class="tag hv">
+            <span class="h">Library type<span>:</span></span>
+            <span class="v">Convenience features</span>
+          </span>
+          <span class="s">, </span>
+          <span class="tag hv">
+            <span class="h">Project complexity<span>:</span></span>
+            <span class="v">Trivial/Simple</span>
+          </span>
+        </div>
+      </div>
+
+      <nav class="tabs" id="further-info">
+        <ul>
+          <li><a href="https://www.hexstreamsoft.com/libraries/releases/latest-versions/#object-class">Latest release</a></li>
+          <li><a href="https://www.hexstreamsoft.com/libraries/dependencies/#object-class">Dependencies</a></li>
+        </ul>
+        <ul>
+          <li><a href="https://www.hexstreamsoft.com/libraries/external-pages-xref/#object-class">External library pages</a></li>
+        </ul>
+      </nav>
+
+      <section id="introduction">
+
+        <p><dfn><code class="relevant">object-class</code></dfn> ensures that special subclasses of standard-object<br />cluster right in front of standard-object in the class precedence list.</p>
+
+      </section>
+
+      <nav class="tabs">
+        <ul>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#dictionary">Dictionary</a></li>
+        </ul>
+      </nav>
+
+      <section id="overview">
+
+        <h1 class="breadcrumbs-bar">
+          <span class="section-relative-nav">
+            <a href="#overview" class="anchor">⚓</a>
+          </span>
+          <span class="breadcrumbs">
+            <a class="here">Overview</a>
+          </span>
+        </h1>
+
+        <p>Using a special subclass of <a href="http://www.lispworks.com/documentation/HyperSpec/Body/t_std_ob.htm" target="_blank">standard-object</a> in instances of a metaclass is a well-known <a href="https://clos-mop.hexstreamsoft.com/" target="_blank">MOP</a> design pattern, as is automatically inserting the needed class in the direct superclasses (since the class precedence list cannot simply add classes that were not declared as direct superclasses).</p>
+        <p>But design patterns are for when you have run out of language, and we didn't run out of language because this is Common Lisp we're talking about, hence this library.</p>
+
+      </section>
+
+      <section id="dictionary">
+
+        <h1 class="breadcrumbs-bar">
+          <span class="section-relative-nav">
+            <a href="#dictionary" class="anchor">⚓</a>
+          </span>
+          <span class="breadcrumbs">
+            <a class="here">Dictionary</a>
+          </span>
+        </h1>
+
+        <nav class="tabs">
+          <ul>
+            <li><a href="#dictionary_object-class"><span class="type">Package</span> <code>object-class</code></a></li>
+          </ul>
+          <ul>
+            <li><a href="#dictionary_object-class"><span class="type">Class</span> <code>object-class</code></a></li>
+            <li><a href="#dictionary_class"><span class="type">Class</span> <code>class</code></a></li>
+            <li><a href="#dictionary_push-back-to-target"><span class="type">Function</span> <code>push-back-to-target</code></a></li>
+          </ul>
+          <ul>
+            <li><a href="#dictionary_autosuperclass"><span class="type">Class</span> <code>autosuperclass</code></a></li>
+            <li><a href="#dictionary_autosuperclass"><span class="type">Generic function</span> <code>autosuperclass</code></a></li>
+          </ul>
+        </nav>
+
+        <section id="dictionary_object-class">
+
+          <h1 class="breadcrumbs-bar">
+            <span class="section-relative-nav">
+              <a href="#dictionary_object-class" class="anchor">⚓</a>
+            </span>
+            <span class="breadcrumbs">
+              <a href="#dictionary">Dictionary</a>
+              <span class="crumb"><span class="s"> » </span><a class="here">object-class</a></span>
+            </span>
+          </h1>
+
+          <article class="package definition">
+
+            <h1><span class="type">Package</span> <span class="name self">object-class</span></h1>
+
+            <section class="description">
+              <h1>Description</h1>
+              <p>All symbols from this package should normally be explicitly qualified, such as <code class="relevant"><a href="#dictionary_class">object-class:class</a></code>.<br />Don't <code>(:use)</code>!</p>
+            </section>
+
+          </article>
+
+          <article class="class definition">
+
+            <h1><span class="type">Class</span> <span class="name self">object-class:object-class</span></h1>
+
+            <p class="direct-superclasses"><a href="https://www.hexstreamsoft.com/libraries/compatible-metaclasses/#dictionary_standard-class" target="_blank">compatible-metaclasses:standard-class</a></p>
+
+            <p class="metaclass">
+              <b>Metaclass:</b>
+              <a href="https://www.hexstreamsoft.com/libraries/compatible-metaclasses/#dictionary_standard-metaclass" target="_blank">compatible-metaclasses:standard-metaclass</a>
+            </p>
+
+            <section class="description">
+              <h1>Description</h1>
+              <p>See description for <code class="specializer relevant"><a href="#dictionary_class">object-class:class</a></code>.</p>
+            </section>
+
+          </article>
+
+        </section>
+
+        <section id="dictionary_class">
+
+          <h1 class="breadcrumbs-bar">
+            <span class="section-relative-nav">
+              <a href="#dictionary_class" class="anchor">⚓</a>
+            </span>
+            <span class="breadcrumbs">
+              <a href="#dictionary">Dictionary</a>
+              <span class="crumb"><span class="s"> » </span><a class="here">class</a></span>
+            </span>
+          </h1>
+
+          <article class="class definition">
+
+            <h1><span class="type">Class</span> <span class="name self">object-class:class</span></h1>
+
+            <p class="direct-superclasses"><a href="https://www.hexstreamsoft.com/libraries/compatible-metaclasses/#dictionary_standard-class" target="_blank">compatible-metaclasses:standard-class</a></p>
+
+            <p class="metaclass">
+              <b>Metaclass:</b>
+              <a href="https://www.hexstreamsoft.com/libraries/compatible-metaclasses/#dictionary_standard-metaclass" target="_blank">compatible-metaclasses:standard-metaclass</a>
+            </p>
+
+            <section class="description">
+              <h1>Description</h1>
+              <p>Classes that are instances of this class push back classes that are instances of <code class="specializer relevant"><a href="#dictionary_object-class">object-class:object-class</a></code> towards the back (to just before <a href="http://www.lispworks.com/documentation/HyperSpec/Body/t_std_ob.htm" target="_blank">standard-object</a> or <a href="https://clos-mop.hexstreamsoft.com/classes/#funcallable-standard-object" target="_blank">funcallable-standard-object</a>) in their class precedence list.</p>
+            </section>
+
+          </article>
+
+          <article class="method definition" id="dictionary_compute-class-precedence-list_class">
+
+            <h1><span class="type">Method</span> <span class="name self"><a href="https://clos-mop.hexstreamsoft.com/generic-functions-and-methods/#compute-class-precedence-list" target="_blank">c2mop:compute-class-precedence-list</a></span></h1>
+
+            <p class="args-and-retvals">(<var>class</var> <code class="specializer relevant"><a href="#dictionary_class">object-class:class</a></code>) =&gt; <var>precedence-list</var></p>
+
+            <section class="description">
+              <h1>Description</h1>
+              <p>Calls <code class="specializer relevant"><a href="#dictionary_push-back-to-target">object-class:push-back-to-target</a></code> with the following arguments:</p>
+              <ol>
+                <li>The result of calling the next method;</li>
+                <li>A function that returns true if its sole argument is an instance of <code class="specializer relevant"><a href="#dictionary_object-class">object-class:object-class</a></code>;</li>
+                <li>A function that returns true if its sole argument is the class <a href="http://www.lispworks.com/documentation/HyperSpec/Body/t_std_ob.htm" target="_blank">standard-object</a> or <a href="https://clos-mop.hexstreamsoft.com/classes/#funcallable-standard-object" target="_blank">funcallable-standard-object</a>;</li>
+                <li>A function of 2 arguments <var>to-push-back</var> and <var>rest</var> that returns <code>(<a href="http://www.lispworks.com/documentation/HyperSpec/Body/f_revapp.htm" target="_blank">nreconc</a> <var>to-push-back</var> <var>rest</var>)</code> if <var>rest</var> is true, else signals an error reporting that neither <a href="http://www.lispworks.com/documentation/HyperSpec/Body/t_std_ob.htm" target="_blank">standard-object</a> nor <a href="https://clos-mop.hexstreamsoft.com/classes/#funcallable-standard-object" target="_blank">funcallable-standard-object</a> were found in the class precedence list.</li>
+              </ol>
+            </section>
+
+          </article>
+
+        </section>
+
+        <section id="dictionary_push-back-to-target">
+
+          <h1 class="breadcrumbs-bar">
+            <span class="section-relative-nav">
+              <a href="#dictionary_push-back-to-target" class="anchor">⚓</a>
+            </span>
+            <span class="breadcrumbs">
+              <a href="#dictionary">Dictionary</a>
+              <span class="crumb"><span class="s"> » </span><a class="here">push-back-to-target</a></span>
+            </span>
+          </h1>
+
+          <article class="function definition">
+
+            <h1><span class="type">Function</span> <span class="name self">object-class:push-back-to-target</span></h1>
+
+            <p class="args-and-retvals"><var>list</var> <var>pushbackp-function</var> <var>targetp-function</var> &amp;optional <var>target-callback</var> =&gt; <var>result</var></p>
+
+            <section class="arguments-and-values">
+              <h1>Arguments and Values</h1>
+              <ul>
+                <li><var>list</var> -- A list.</li>
+                <li><var>pushbackp-function</var> -- A <a href="http://www.lispworks.com/documentation/HyperSpec/Body/26_glo_f.htm#function_designator" target="_blank">function designator</a>.</li>
+                <li><var>targetp-function</var> -- A <a href="http://www.lispworks.com/documentation/HyperSpec/Body/26_glo_f.htm#function_designator" target="_blank">function designator</a>.</li>
+                <li><var>target-callback</var> -- A <a href="http://www.lispworks.com/documentation/HyperSpec/Body/26_glo_f.htm#function_designator" target="_blank">function designator</a>. The default is <a href="http://www.lispworks.com/documentation/HyperSpec/Body/f_revapp.htm" target="_blank">nreconc</a>.</li>
+                <li><var>result</var> -- A list.</li>
+              </ul>
+            </section>
+
+            <section class="description">
+              <h1>Description</h1>
+              <p>Let <var>to-push-back</var> be the empty list.</p>
+              <p>First, traverse <var>list</var> up to the first element for which <var>targetp-function</var> returns true, or to the end of the list if there is no such element.<br />During this traversal, if <var>pushbackp-function</var> is true of the element, then push it into <var>to-push-back</var> (in reverse order) and remove it from <var>list</var>, else copy it. This processing ends right before the target if it is present.</p>
+              <p>Second, concatenate the copied results from the first step to the result of calling <var>target-callback</var> with <var>to-push-back</var> and the rest of the list, which has the target as its first element if the target was present in the list.</p>
+            </section>
+
+          </article>
+
+        </section>
+
+        <section id="dictionary_autosuperclass">
+
+          <h1 class="breadcrumbs-bar">
+            <span class="section-relative-nav">
+              <a href="#dictionary_autosuperclass" class="anchor">⚓</a>
+            </span>
+            <span class="breadcrumbs">
+              <a href="#dictionary">Dictionary</a>
+              <span class="crumb"><span class="s"> » </span><a class="here">autosuperclass</a></span>
+            </span>
+          </h1>
+
+          <article class="class definition">
+
+            <h1><span class="type">Class</span> <span class="name self">object-class:autosuperclass</span></h1>
+
+            <p class="direct-superclasses"><a href="https://www.hexstreamsoft.com/libraries/class-options/#dictionary_options-mixin" target="_blank">class-options:options-mixin</a>, <a href="https://www.hexstreamsoft.com/libraries/compatible-metaclasses/#dictionary_standard-class" target="_blank">compatible-metaclasses:standard-class</a></p>
+
+            <p class="metaclass">
+              <b>Metaclass:</b>
+              <a href="https://www.hexstreamsoft.com/libraries/compatible-metaclasses/#dictionary_standard-metaclass" target="_blank">compatible-metaclasses:standard-metaclass</a>
+            </p>
+
+            <section class="description">
+              <h1>Description</h1>
+              <p>Classes that are instances of this class automatically append the list of classes returned by calling <code>(<code class="specializer relevant"><a href="#dictionary_autosuperclass">object-class:autosuperclass</a></code> <var>class</var>)</code> to the end of the class' direct superclasses.</p>
+            </section>
+
+          </article>
+
+          <article class="method definition" id="dictionary_class-options:canonicalize-options_autosuperclass">
+
+            <h1><span class="type">Method</span> <span class="name self"><a href="https://www.hexstreamsoft.com/libraries/class-options/#dictionary_canonicalize-options" target="_blank">class-options:canonicalize-options</a></span></h1>
+
+            <p class="args-and-retvals">(<var>class</var> <code class="specializer relevant"><a href="#dictionary_autosuperclass">object-class:autosuperclass</a></code>) &amp;key direct-superclasses =&gt; <var>canonicalized-options</var></p>
+
+            <section class="description">
+              <h1>Description</h1>
+              <p>If we are initializing or <var>direct-superclasses</var> has been supplied, then prepend <code>:direct-superclasses (append <var>direct-superclasses</var> <code>(<code class="specializer relevant"><a href="#dictionary_autosuperclass">object-class:autosuperclass</a></code> <var>class</var>)</code>)</code> to the results of calling the next method.</p>
+            </section>
+
+          </article>
+
+          <article class="generic-function definition">
+
+            <h1><span class="type">Generic Function</span> <span class="name self">compatible-metaclasses:autosuperclass</span></h1>
+
+            <p class="args-and-retvals"><var>class</var> =&gt; <var>classes</var></p>
+
+            <section class="arguments-and-values">
+              <h1>Arguments and Values</h1>
+              <ul>
+                <li><var>class</var> -- A class.</li>
+                <li><var>classes</var> -- A list of classes.</li>
+              </ul>
+            </section>
+
+            <section class="description">
+              <h1>Description</h1>
+              <p>Returns the list of <var>classes</var> that should be automatically appended to the end of the list of direct superclasses for this <var>class</var>.</p>
+              <p>Define a method on this generic function specializing on your metaclass to return the <var>classes</var> you want to append, usually one.</p>
+            </section>
+
+            <section class="methods">
+              <h1>Methods</h1>
+
+              <article class="method definition" id="dictionary_autosuperclass_autosuperclass">
+
+                <h1><span class="type">Method</span> <span class="name self">object-class:autosuperclass</span></h1>
+
+                <p class="args-and-retvals">(<var>class</var> <code class="specializer relevant"><a href="#dictionary_autosuperclass">object-class:autosuperclass</a></code>) =&gt; <var>autosuperclass</var></p>
+
+                <section class="description">
+                  <h1>Description</h1>
+                  <p>Returns <code>nil</code>.</p>
+                </section>
+
+              </article>
+
+            </section>
+
+          </article>
+
+        </section>
+
+        <nav class="end-of-section-indicator">
+          <a href="#dictionary">
+            "<span>Dictionary</span>" end.
+          </a>
+        </nav>
+
+      </section>
+
+    </main>
+
+    <footer id="footer">
+      <div class="back-to-top left">
+        <a href="#">⬆</a>
+      </div>
+      <div class="main">
+        <a href="https://validator.w3.org/check?uri=http%3A%2F%2Fwww.hexstreamsoft.com%2Flibraries%2Fobject-class%2F">✔ HTML5</a>
+        <a href="https://www.hexstreamsoft.com/README">✔ Public Domain</a>
+        <a href="https://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fwww.hexstreamsoft.com%2Flibraries%2Fobject-class%2F">✔ CSS3</a>
+        <a>✔ Mobile-friendly</a>
+      </div>
+      <div class="back-to-top right">
+        <a href="#">⬆</a>
+      </div>
+    </footer>
+
+  </body>
+</html>

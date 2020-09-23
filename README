@@ -1,0 +1,9 @@
+Project's home: https://www.hexstreamsoft.com/libraries/object-class/
+
+
+object-class ensures that special subclasses of standard-object
+cluster right in front of standard-object in the class precedence list.
+
+
+This library is in the Public Domain.
+See the UNLICENSE file for details.
